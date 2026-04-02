@@ -1,0 +1,64 @@
+.contact{
+padding-top:140px;
+padding-bottom:60px;
+min-height:calc(100vh - 200px);
+}
+
+.contact-content{
+text-align:center;
+}
+
+.contact-intro{
+margin-bottom:30px;
+line-height:1.6;
+}
+
+.contact-form{
+margin-top:30px;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:12px 14px;
+border:1px solid #ccc;
+font-size:14px;
+font-family:inherit;
+outline:none;
+transition:border 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+border:1px solid black;
+}
+
+.form-group textarea{
+resize:vertical;
+}
+
+.invia{
+align-self:center;
+padding:10px 22px;
+border:1px solid black;
+background:none;
+font-size:14px;
+cursor:pointer;
+transition:all 0.2s ease;
+}
+
+.invia:hover{
+background:black;
+color:white;
+}
+
+.navbar-light .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='black' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar-light .navbar-toggler{
+  border-color: rgba(0,0,0,0.2);
+}

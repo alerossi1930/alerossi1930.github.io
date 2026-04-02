@@ -1,0 +1,54 @@
+body{
+cursor:none;
+}
+
+*{
+cursor:none !important;
+}
+
+a, button, img {
+cursor: none !important;
+}
+
+.custom-cursor{
+position:fixed;
+top:0;
+left:0;
+width:16px;
+height:16px;
+background:black;
+border-radius:50%;
+pointer-events:none;
+transform:translate(-50%, -50%);
+transition:transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+z-index:99999;
+}
+
+.custom-cursor.active{
+width:28px;
+height:28px;
+opacity:0.5;
+}
+
+.custom-cursor.text{
+width:2px;
+height:20px;
+border-radius:0;
+opacity:1;
+}
+
+
+/* remove text caret */
+input, textarea, [contenteditable] {
+caret-color: transparent;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor{
+    display: none;
+  }
+
+  body, *{
+    cursor: auto !important;
+  }
+}

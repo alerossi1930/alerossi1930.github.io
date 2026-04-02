@@ -1,0 +1,118 @@
+/* SIDEBAR FILTRI */
+
+.filters-sidebar{
+padding:10px 30px;
+border-right:1px solid #eee;
+position:sticky;
+top:100px;
+height:fit-content;
+}
+
+.filter-btn{
+display:block;
+background:none;
+border:none;
+margin-bottom:10px;
+font-size:14px;
+cursor:pointer;
+opacity:0.6;
+}
+
+.filter-btn.active{
+opacity:1;
+font-weight:600;
+}
+
+
+/* GRIGLIA */
+
+.portfolio-grid{
+display:grid;
+grid-template-columns: repeat(3, 1fr);
+gap:20px;
+padding-bottom: 20px;
+grid-auto-flow: dense;
+}
+
+.portfolio-item{
+position:relative;
+overflow:hidden;
+aspect-ratio:4/5;
+display:block;
+text-decoration:none;
+color:inherit;
+}
+
+.portfolio-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* Large projects (desktop only) – same height as normal items */
+.span-2{
+grid-column: span 2;
+aspect-ratio:8/4.825;
+}
+
+@media (max-width:992px){
+
+.portfolio-grid{
+grid-template-columns: repeat(2,1fr);
+grid-auto-flow: dense;
+}
+
+.span-2{
+grid-column: span 2;
+}
+
+}
+
+@media (max-width:576px){
+
+.portfolio-grid{
+grid-template-columns:1fr;
+}
+
+.span-2{
+grid-column: span 1;
+aspect-ratio:auto;
+}
+
+.span-2 img{
+height:auto;
+object-fit:contain;
+}
+
+}
+
+/* FILTRI MOBILE */
+
+.filters-mobile{
+position:sticky;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+border-top:1px solid #eee;
+display:flex;
+justify-content:space-around;
+padding:18px 0 12px 0;
+z-index:1000;
+}
+
+/* Ensure hamburger icon is visible on white navbar */
+.navbar-toggler{
+border:none;
+}
+
+.navbar-toggler-icon{
+filter:invert(1);
+}
+
+.project-nav a{
+text-decoration:none;
+color:black;
+font-size:20px;
+}

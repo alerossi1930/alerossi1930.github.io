@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>About | Alessandro Rossi</title>
+
+<link rel="icon" type="image/png" href="../img/cursor/favicon.png">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/stile.css">
+<link rel="stylesheet" href="../css/about.css">
+<link rel="stylesheet" href="../css/cursor.css">
+
+</head>
+
+<body>
+
+<div class="custom-cursor" id="cursor"></div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand text-dark fs-6 fw-normal" href="../index.html">Alessandro Rossi</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-dark" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link active text-dark" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="contact.html">Contatti</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="about-hero">
+
+<div class="container-fluid px-0">
+<div class="row g-0">
+
+<div class="col-12 col-lg-6">
+  <div class="about-image">
+    <img id="about-portrait-1" src="../img/ed_pitto_1.png" alt="Ritratto Alessandro Rossi">
+  </div>
+</div>
+
+<div class="d-none d-lg-block col-lg-6">
+  <div class="about-image">
+    <img id="about-portrait-2" src="../img/ed_pitto_4.png" alt="Ritratto Alessandro Rossi">
+  </div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="about-text-section about-overlay" id="aboutOverlay">
+
+<div class="container-fluid px-4">
+<div class="row justify-content-center">
+
+<div class="col-lg-6 col-md-8 col-12 about-text">
+<button class="about-close" id="aboutClose">×</button>
+
+<p class="about-intro">
+Ciao, sono Alessandro Rossi, illustratore italiano.
+Il mio lavoro si concentra principalmente sull’illustrazione editoriale
+e sul visual storytelling.
+</p>
+
+<p>
+Nel mio lavoro mi muovo tra progetti editoriali, commissioni
+per brand e ricerca personale. L’illustrazione per me è uno spazio
+in cui sperimentare linguaggi diversi mantenendo sempre
+una forte attenzione alla leggibilità dell’immagine.
+</p>
+
+<p>
+Sono particolarmente interessato a collaborazioni con riviste,
+editori, studi creativi e realtà culturali. Mi piace lavorare
+su progetti in cui l’immagine diventa parte di una narrazione
+più ampia, sia su carta che in formato digitale.
+</p>
+
+</div>
+
+</div>
+</div>
+
+</section>
+
+<footer class="footer">
+  <div class="container-fluid px-4">
+
+    <div class="footer-content text-center">
+
+      <p class="footer-cta mb-3">Contattami!</p>
+
+      <div class="footer-links d-flex justify-content-center gap-4 mb-3">
+        <a href="mailto:alerossi1930@gmail.com"><i class="bi bi-envelope"></i> Email</a>
+        <a href="https://www.instagram.com/alerossi___/"><i class="bi bi-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/alessandro-rossi-154544257"><i class="bi bi-linkedin"></i> LinkedIn</a>
+      </div>
+
+      <p class="footer-copyright">
+        © 2026 Alessandro Rossi
+      </p>
+
+    </div>
+
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/cursor.js"></script>
+
+<script>
+const images = [
+"../img/ed_pitto_1.png",
+"../img/ed_pitto_2.png",
+"../img/ed_pitto_3.png",
+"../img/ed_pitto_4.png",
+"../img/ed_pitto_5.png",
+"../img/ed_pitto_6.png",
+"../img/ed_pitto_7.png"
+];
+
+let current1 = 0;
+let current2 = 3;
+
+const img1 = document.getElementById("about-portrait-1");
+const img2 = document.getElementById("about-portrait-2");
+
+setInterval(() => {
+  current1 = (current1 + 1) % images.length;
+  img1.src = images[current1];
+
+  if(img2){
+    current2 = (current2 + 1) % images.length;
+    img2.src = images[current2];
+  }
+
+}, 500);
+</script>
+
+<script>
+const overlay = document.getElementById('aboutOverlay');
+const closeBtn = document.getElementById('aboutClose');
+const img1Click = document.getElementById('about-portrait-1');
+const img2Click = document.getElementById('about-portrait-2');
+
+function openOverlay(){
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOverlay(){
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if(img1Click){ img1Click.addEventListener('click', openOverlay); }
+if(img2Click){ img2Click.addEventListener('click', openOverlay); }
+if(closeBtn){ closeBtn.addEventListener('click', closeOverlay); }
+
+// click outside text closes
+overlay.addEventListener('click', (e)=>{
+  if(e.target === overlay){ closeOverlay(); }
+});
+</script>
+
+</body>
+
+</html>
