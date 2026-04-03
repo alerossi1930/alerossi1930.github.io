@@ -16,6 +16,7 @@ margin-bottom:10px;
 font-size:14px;
 cursor:pointer;
 opacity:0.6;
+color:black;
 }
 
 .filter-btn.active{
@@ -115,4 +116,16 @@ filter:invert(1);
 text-decoration:none;
 color:black;
 font-size:20px;
+}
+
+
+/* Fix mobile blue clickable text */
+button, a{
+  color: black !important;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus, a:focus{
+  outline: none;
 }
