@@ -53,8 +53,8 @@ display:block;
 
 /* Large projects (desktop only) – same height as normal items */
 .span-2{
-grid-column: span 2;
-aspect-ratio:8/4.825;
+  grid-column: span 2;
+  aspect-ratio:2/1.21825; /* exactly double width keeping same height as 4/5 */
 }
 
 @media (max-width:992px){
