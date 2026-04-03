@@ -119,13 +119,19 @@ font-size:20px;
 }
 
 
-/* Fix mobile blue clickable text */
-button, a{
+/* Fix mobile & iPad blue clickable text */
+button, a, a:visited, a:active{
   color: black !important;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-text-fill-color: black !important;
 }
 
 button:focus, a:focus{
   outline: none;
+}
+
+button{
+  -webkit-appearance: none;
+  appearance: none;
 }
