@@ -36,12 +36,14 @@
 
 /* NAVBAR */
 .navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  background:white;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+background:white;
+display:flex;
+align-items:center;
 }
 
 .nav-icon{
@@ -100,4 +102,23 @@ html, body{
 /* PAUSA HOVER */
 .project-track:hover{
   animation-play-state: paused;
+}
+
+#project-title{
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+flex:1 1 auto;
+min-width:0;
+}
+
+.navbar .d-flex{
+flex-shrink:0;
+}
+
+.navbar .container-fluid{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:nowrap;
 }
