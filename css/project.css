@@ -55,6 +55,7 @@ align-items:center;
   justify-content:center;
   width:30px;
   height:30px;
+  flex-shrink:0;
 }
 
 /* LIGHTBOX */
@@ -105,11 +106,13 @@ html, body{
 }
 
 #project-title{
-overflow:hidden;
-white-space:nowrap;
-text-overflow:ellipsis;
-flex:1 1 auto;
-min-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  flex:1 1 auto;
+  min-width:0;
+  max-width:100%;
+  display:block;
 }
 
 .navbar .d-flex{
@@ -121,4 +124,8 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 flex-wrap:nowrap;
+}
+
+.navbar .container-fluid > *{
+  min-width:0;
 }
