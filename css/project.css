@@ -78,6 +78,12 @@ align-items:center;
   object-fit:contain;
 }
 
+.lightbox video{
+  max-width:90%;
+  max-height:90vh;
+  object-fit:contain;
+}
+
 /* FOOTER */
 .footer{
   width:100%;
@@ -128,4 +134,10 @@ flex-wrap:nowrap;
 
 .navbar .container-fluid > *{
   min-width:0;
+}
+
+.project-gallery video{
+  width:100%;
+  max-height:87vh;
+  object-fit:cover;
 }
