@@ -308,7 +308,7 @@ const PROJECTS = [
     category: "cover",
     tags: ["Cover", "Book"],
     images: [
-      "images/projects/dentro-la-boccia/alessandro-rossi-dentro-la-boccia.png",
+      "images/projects/dentro-la-boccia/alessandro-rossi-dentro-la-boccia.jpg",
     ],
   },
   {
