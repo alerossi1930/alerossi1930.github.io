@@ -45,7 +45,7 @@ const PROJECTS = [
     title: "Il buio oltre la siepe",
     type: "Editorial",
     year: "2026",
-    category: "editorial",
+    category: "children",
     tags: ["Editorial", "Book"],
     images: [
       "images/projects/il-buio-oltre-la-siepe/ed_il-buio-oltre-la-siepe_1.jpg",
@@ -60,7 +60,7 @@ const PROJECTS = [
     title: "Cura",
     type: "Personal work",
     year: "2026",
-    category: "personal",
+    category: "editorial",
     tags: ["Personal work", "Poster"],
     images: [
       "images/projects/cura/alessandro-rossi-cura.jpg",
@@ -82,7 +82,7 @@ const PROJECTS = [
     title: "Aromi del cambiamento",
     type: "Editorial",
     year: "2025",
-    category: "editorial",
+    category: "personal",
     tags: ["Editorial", "Food"],
     images: [
       "images/projects/aromi-del-cambiamento/ed_aromi.jpg",
@@ -263,7 +263,7 @@ const PROJECTS = [
     title: "Robotzzz",
     type: "Personal work",
     year: "2026",
-    category: "personal",
+    category: "editorial",
     tags: ["Personal work", "Character design", "Printed with Stanze Primate"],
     images: [
       "images/projects/robotzzz/ed_robots_01.jpg",
@@ -362,7 +362,7 @@ const PROJECTS = [
     title: "Matter of Instinct",
     type: "Personal work",
     year: "2026",
-    category: "personal",
+    category: "editorial",
     tags: ["Personal work", "Poster"],
     images: [
       "images/projects/stillhuman/matterofinstinct-rossi-alessandro-2.jpg",
