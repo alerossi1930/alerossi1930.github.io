@@ -1,56 +1,36 @@
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxVideo = document.getElementById('lightboxVideo');
-const closeBtn = document.getElementById('lightboxClose');
+document.addEventListener("DOMContentLoaded", () => {
+  const titleEl = document.getElementById("projectTitle");
+  const imagesWrap = document.getElementById("projectImages");
+  if (!titleEl || !imagesWrap || typeof PROJECTS === "undefined") return;
 
-const imgs = document.querySelectorAll('.project-gallery img, .project-gallery video');
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const index = Math.max(
+    0,
+    PROJECTS.findIndex((p) => p.slug === slug)
+  );
+  const project = PROJECTS[index];
 
-imgs.forEach(el => {
-  el.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+  document.title = `${project.title} — Alessandro Rossi`;
+  titleEl.textContent = project.title;
+  document.getElementById("projectYear").textContent = project.year;
+  document.getElementById("projectTags").textContent = project.tags.join(", ");
 
-    if (el.tagName === 'IMG') {
-      lightboxImg.src = el.src;
-      lightboxImg.style.display = 'block';
+  const pageUrl = `https://alessandroillustra.it/project.html?slug=${encodeURIComponent(project.slug)}`;
+  const description = `${project.title} — ${project.tags.join(", ")} illustration project by Alessandro Rossi.`;
+  const cover = new URL(project.cover || project.images[0], window.location.href).href;
+  document.getElementById("metaDescription")?.setAttribute("content", description);
+  document.getElementById("canonicalLink")?.setAttribute("href", pageUrl);
+  document.getElementById("ogTitle")?.setAttribute("content", `${project.title} — Alessandro Rossi`);
+  document.getElementById("ogDescription")?.setAttribute("content", description);
+  document.getElementById("ogUrl")?.setAttribute("content", pageUrl);
+  document.getElementById("ogImage")?.setAttribute("content", cover);
 
-      lightboxVideo.style.display = 'none';
-      lightboxVideo.pause();
-    }
-
-    if (el.tagName === 'VIDEO') {
-      lightboxVideo.src = el.src;
-      lightboxVideo.style.display = 'block';
-      lightboxVideo.play();
-
-      lightboxImg.style.display = 'none';
-    }
+  imagesWrap.innerHTML = "";
+  project.images.forEach((src) => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = project.title;
+    imagesWrap.appendChild(img);
   });
 });
-
-closeBtn.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-  document.body.style.overflow = '';
-
-  lightboxVideo.pause();
-});
-
-lightbox.addEventListener('click', (e) => {
-  if(e.target === lightbox){
-    lightbox.style.display = 'none';
-    document.body.style.overflow = '';
-
-    lightboxVideo.pause();
-  }
-});
-
-const type = document.body.dataset.type;
-const title = document.getElementById('project-title');
-
-if(type && title){
-  const span = document.createElement('span');
-  span.textContent = ' — ' + type;
-  span.style.opacity = '0.6';
-  span.style.marginLeft = '6px';
-  title.appendChild(span);
-}
