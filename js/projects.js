@@ -67,6 +67,17 @@ const PROJECTS = [
     ],
   },
   {
+    slug: "merenda-all-ombra",
+    title: "Merenda all'ombra",
+    type: "Personal work",
+    year: "2026",
+    category: "personal",
+    tags: ["Personal work", "Spot illustration"],
+    images: [
+      "images/projects/merenda-all-ombra/alessandro-rossi-merenda-all-ombra.jpg",
+    ],
+  },
+  {
     slug: "aromi-del-cambiamento",
     title: "Aromi del cambiamento",
     type: "Editorial",
@@ -253,7 +264,7 @@ const PROJECTS = [
     type: "Personal work",
     year: "2026",
     category: "personal",
-    tags: ["Personal work", "Character design"],
+    tags: ["Personal work", "Character design", "Printed with Stanze Primate"],
     images: [
       "images/projects/robotzzz/ed_robots_01.jpg",
       "images/projects/robotzzz/ed_robots_02.jpg",
@@ -287,6 +298,17 @@ const PROJECTS = [
     tags: ["Cover", "Poster"],
     images: [
       "images/projects/the-monferriner/alessandro-rossi-the-monferriner.jpg",
+    ],
+  },
+  {
+    slug: "dentro-la-boccia",
+    title: "Dentro la boccia",
+    type: "Cover",
+    year: "2026",
+    category: "cover",
+    tags: ["Cover", "Book"],
+    images: [
+      "images/projects/dentro-la-boccia/alessandro-rossi-dentro-la-boccia.png",
     ],
   },
   {
